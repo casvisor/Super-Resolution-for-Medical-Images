@@ -29,7 +29,7 @@ pip install -r requirements.txt
 ```
 **4. Run the application**
 ```
-streamlit run streamlit_app.py
+streamlit run streamlit_app.py --server.port 8502
 ```
 **5. StreamLit Appication:**  
 * Here you can play around with the streamlit demo  
