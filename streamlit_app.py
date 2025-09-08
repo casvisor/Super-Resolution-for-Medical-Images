@@ -49,57 +49,49 @@ def run_UI():
     """
 
     ## Set the page title and navigation bar
-    st.sidebar.title('Select Menu')
+    st.sidebar.title('选择菜单')
     if st.session_state["page"]:
-        page=st.sidebar.radio('Navigation', PAGES, index=st.session_state["page"])
+        page=st.sidebar.radio('网站导航', PAGES, index=st.session_state["page"])
     else:
-        page=st.sidebar.radio('Navigation', PAGES, index=0)
+        page=st.sidebar.radio('网站导航', PAGES, index=0)
     st.experimental_set_query_params(page=page)
 
 
     ## Display the page selected on the navigation bar
-    if page == 'Home':
+    if page == '首页':
         st.sidebar.write("""
-            ## About
-
-            This project aims to enhance the resolution and quality of medical X-ray images using state-of-the-art Generative Adversarial Networks. 
-            
-            The project implements the Swift-SRGAN model architecture to enhance the resolution of low-quality X-ray images.
+            ## 关于
+            本项目旨在利用最先进的生成对抗网络（Generative Adversarial Networks）技术，提升医学X光图像的分辨率和质量。
+            该项目采用了Swift-SRGAN模型架构，以增强低质量X光图像的分辨率。
         """)
-        st.title("Medical Images Super Resolution ☠️")
+        st.title("医学图像超分 ☠️")
         home_page.home_page_UI()
 
-    elif page == 'Image Enhancer Example':
+    elif page == '图像增强示例':
         st.sidebar.write("""
-            ## About
-
-            This project aims to enhance the resolution and quality of medical X-ray images using state-of-the-art Generative Adversarial Networks. 
-            
-            The project implements the Swift-SRGAN model architecture to enhance the resolution of low-quality X-ray images.
+            ## 关于
+            本项目旨在利用最先进的生成对抗网络（Generative Adversarial Networks）技术，提升医学X光图像的分辨率和质量。
+            该项目采用了Swift-SRGAN模型架构，以增强低质量X光图像的分辨率。
         """)
-        st.title("Image Super Resolution Examples ☠️")
+        st.title("图像超分示例 ☠️")
         image_enhancer.image_enhancer_UI(model)
     
-    elif page == 'Try Your Own Image':
+    elif page == '尝试使用您自己的图像':
         st.sidebar.write("""
-            ## About
-            
-            This project aims to enhance the resolution and quality of medical X-ray images using state-of-the-art Generative Adversarial Networks. 
-            
-            The project implements the Swift-SRGAN model architecture to enhance the resolution of low-quality X-ray images.
+            ## 关于
+            本项目旨在利用最先进的生成对抗网络（Generative Adversarial Networks）技术，提升医学X光图像的分辨率和质量。
+            该项目采用了Swift-SRGAN模型架构，以增强低质量X光图像的分辨率。
         """)
-        st.title("Try Your Own Image ☠️")
+        st.title("尝试使用您自己的图像 ☠️")
         new_image_enhancer.new_image_enhancer_UI(model)
 
     else:
         st.sidebar.write("""
-            ## About
-            
-            This project aims to enhance the resolution and quality of medical X-ray images using state-of-the-art Generative Adversarial Networks. 
-            
-            The project implements the Swift-SRGAN model architecture to enhance the resolution of low-quality X-ray images.
+            ## 关于
+            本项目旨在利用最先进的生成对抗网络（Generative Adversarial Networks）技术，提升医学X光图像的分辨率和质量。
+            该项目采用了Swift-SRGAN模型架构，以增强低质量X光图像的分辨率。
         """)
-        st.title("Medical Images Super Resolution ☠️")
+        st.title("医学图像超分 ☠️")
         about_us.about_us_UI()
 
 
@@ -114,8 +106,8 @@ if __name__ == '__main__':
 
         if 'loaded' not in st.session_state:
             if len(url_params.keys()) == 0:
-                ## Set the default page as "Home"
-                st.experimental_set_query_params(page='Home')
+                ## Set the default page as "首页"
+                st.experimental_set_query_params(page='首页')
                 url_params = st.experimental_get_query_params()
                 st.session_state.page = PAGES.index(url_params['page'][0])
         
