@@ -13,59 +13,57 @@ def home_page_UI():
     
     ## Display details on super resolution
     st.divider()
-    st.subheader("What is Super Resolution? 🩻")
-    st.write("The process of recovering and reconstructing the resolution of a noisy low-quality image into a very high-quality and high-resolution image is known as image Super Resolution")
+    st.subheader("什么是超分？ 🩻")
+    st.write("将含有噪声的低质量图像恢复并重建为高质量、高分辨率图像的过程被称为图像超分")
     
     ## Display details on project
-    st.subheader("About the Project ⭐")
+    st.subheader("关于项目 ⭐")
     st.write("""
-            This project aims to enhance the resolution and quality of medical X-ray images using state-of-the-art Generative Adversarial Networks (GANs). 
-            The project implements the Swift-SRGAN model architecture to enhance the resolution of low-quality X-ray images.
-        """)
+            本项目旨在利用最先进的生成对抗网络（Generative Adversarial Networks, GANs）技术，提升医学X光图像的分辨率和质量。项目采用了Swift-SRGAN模型架构，以增强低质量X光图像的分辨率。
+            """)
     
     ## Display details on model performance
     st.divider()
-    st.subheader("Model Performance 🧨")
+    st.subheader("模型性能 🧨")
     st.write("""
-            The resulting GAN model was evaluated and compared against ground truths using different metrics like PSNR and SSIM.
-            Compared to PSNR, SSIM is often considered a more perceptually accurate metric, as it takes into account the human visual system's sensitivity to changes in luminance, contrast, and structure
+            生成的GAN模型通过不同的指标（如PSNR和SSIM）与真实值进行了评估和比较。相比于PSNR，SSIM通常被认为是一种更具感知准确性的度量标准，因为它考虑了人类视觉系统对亮度、对比度和结构变化的敏感性。
             """)
     
     # Display PSNR
     row_1_col1, row_1_col2 = st.columns(2)
     with row_1_col1:
-        st.success('Peak Signal-to-Noise Ratio: 41.66 db', icon="👀")
+        st.success('峰值信噪比: 41.66 db', icon="👀")
         st.write("""
-            - It's a metric used to measure the quality of an image.
-            - It measures difference b/w two images by comparing their pixel values and computing the ratio between the maximum pixel value and the mean squared error.
-            - Higher the PSNR, lesser tehe difference b/w two images, indicating a higher quality.
+            - 一种用于衡量图像质量的指标。
+            - 通过比较两个图像的像素值并计算最大像素值与均方误差之间的比率来衡量它们之间的差异。
+            - PSNR越高表示两个图像之间的差异越小，表明图像质量越高。
         """)
     
     # Display SSIM
     with row_1_col2:
-        st.info('Structural Similarity Index: 0.96', icon="🎯")
+        st.info('结构相似性指数: 0.96', icon="🎯")
         st.write("""
-            - It's a metric used to measure the similarity between two images.
-            - It takes into account structural information of the images and computes a similarity score between the two based on structural factors.
-            - Higher SSIM score indicates a higher similarity between the two images.
+            - 一种用于衡量两个图像之间相似性的指标。
+            - 考虑了图像的结构信息，并基于结构因素计算两个图像之间的相似度得分。
+            - 更高的SSIM分数表示两个图像之间的相似度更高。
         """)
 
     ## Display details on risks and limitations
     st.divider()
-    st.subheader("Risks and Limitations ⚠️")
+    st.subheader("风险和局限性 ⚠️")
     st.write("""
-            - Generative networks may struggle to accurately capture important details in extremely low resolution medical X-ray images (< 128 x128), which could negatively impact the generated high quality images. 
-            - The netowrk may generate features that dont exist.
-            - The use of generative networks in medical imaging raises ethical concerns around issues such as bias, accountability, and transparency.
+            - GANs可能难以准确捕捉极低分辨率医学X光图像（< 128 x 128）中的重要细节，这可能会对生成的高质量图像产生负面影响。 
+            - GANs可能会生成不存在的特征。
+            - GANs在医学成像中的使用引发了关于偏见、问责和透明度等问题的伦理担忧。
             """)
-    st.caption("Minimizing the Risk ✅")
-    st.write("""To minimize the risk of bias, the model was trained on a diverse dataset of X-ray images. 
-            Furthermore, addtion of perceptual loss to the model helps to ensure that the generated images are similar to the original images and no new features are generated while enhancing the resolution.
+    st.caption("削减风险 ✅")
+    st.write("""为了减少偏见的风险，模型在一个多样化的X光图像数据集上进行了训练。 
+            此外，向模型中添加感知损失有助于确保生成的图像与原始图像相似，并在增强分辨率时不会生成新的特征。
             """)
 
     ## Display details on about me
-    st.divider()
-    st.subheader("About me")
-    st.write("""
-    I am doing this project as a part of our core curriculam at Duke University for Masters in Artificial Intelligence (Course: AIPI 540: Deep Learning Applications)
-    """)
+    ## st.divider()
+    ## st.subheader("About me")
+    ## st.write("""
+    ## I am doing this project as a part of our core curriculam at Duke University for Masters in Artificial Intelligence (Course: AIPI 540: Deep Learning Applications)
+    ## """)
